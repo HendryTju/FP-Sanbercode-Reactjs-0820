@@ -18,56 +18,56 @@ import { Navcontext } from "../Context/Navcontext";
 import { Authcontext } from "../Context/Authcontext";
 
 const Navbar = (props) => {
-    const classes = useStyles();
-    const { open, setOpen } = useContext(Navcontext);
-    const { user, setUser } = useContext(Authcontext);
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const openProfileIcon = Boolean(anchorEl);
+  const classes = useStyles();
+  const { open, setOpen } = useContext(Navcontext);
+  const { user, setUser } = useContext(Authcontext);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openProfileIcon = Boolean(anchorEl);
 
-    const handleProfileIcon = (event) => {
-        setAnchorEl(event.currentTarget);
-        };
-        const handleCloseProfileIcon = () => {
-            setAnchorEl(null);
-          };
-        
-          const handleProfile = () => {
-            props.history.push("/profile");
-            handleCloseProfileIcon();
-          };
-        
-          const handleDrawer = () => {
-            setOpen(!open);
-          };
-        
-          const handleLogOut = () => {
-            localStorage.clear("user");
-            setUser(null);
-            handleCloseProfileIcon();
-          };
-        
-          const home = () => {
-            props.history.push("/");
-          };
-        
-          const ListMovies = () => {
-            props.history.push("/movie-list");
-          };
-        
-          const ListGames = () => {
-            props.history.push("/game-list");
-          };
-        
-          const Login = () => {
-            props.history.push("/login");
-          };
-        
-          const SignUp = () => {
-            props.history.push("/signup");
-          };
+  const handleProfileIcon = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseProfileIcon = () => {
+    setAnchorEl(null);
+  };
 
-    return(
-        <AppBar
+  const handleProfile = () => {
+    props.history.push("/profile");
+    handleCloseProfileIcon();
+  };
+
+  const handleDrawer = () => {
+    setOpen(!open);
+  };
+
+  const handleLogOut = () => {
+    localStorage.clear("user");
+    setUser(null);
+    handleCloseProfileIcon();
+  };
+
+  const home = () => {
+    props.history.push("/");
+  };
+
+  const ListMovies = () => {
+    props.history.push("/movie-list");
+  };
+
+  const ListGames = () => {
+    props.history.push("/game-list");
+  };
+
+  const Login = () => {
+    props.history.push("/login");
+  };
+
+  const SignUp = () => {
+    props.history.push("/signup");
+  };
+
+  return (
+    <AppBar
       position="fixed"
       className={clsx(classes.appBar, {
         [classes.appBarShift]: open,
@@ -100,7 +100,7 @@ const Navbar = (props) => {
                   color="inherit"
                   onClick={home}
                 >
-                  Movie & Games
+                  Home
                 </Link>
               </Grid>
             </Grid>
@@ -116,14 +116,10 @@ const Navbar = (props) => {
               <Grid item>
                 <Grid container spacing={1}>
                   <Grid item>
-                    <MovieIcon />
-                  </Grid>
-                  <Grid item>
                     <Link
                       component="button"
                       variant="body1"
                       underline="none"
-                      color="inherit"
                       onClick={ListMovies}
                     >
                       Movie List
@@ -134,14 +130,10 @@ const Navbar = (props) => {
               <Grid item>
                 <Grid container spacing={1}>
                   <Grid item>
-                    <VideogameIcon />
-                  </Grid>
-                  <Grid item>
                     <Link
                       component="button"
                       variant="body1"
                       underline="none"
-                      color="inherit"
                       onClick={ListGames}
                     >
                       Game List
@@ -188,14 +180,14 @@ const Navbar = (props) => {
               ) : (
                 <>
                   <Grid item>
-                    <Button color="default" onClick={Login}>
+                    <Button variant="contained" color="default" onClick={Login}>
                       Login
                     </Button>
                   </Grid>
                   <Grid item>
                     <Button
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       onClick={SignUp}
                     >
                       Sign Up
@@ -208,7 +200,6 @@ const Navbar = (props) => {
         </Grid>
       </Toolbar>
     </AppBar>
-    )
-
-}
+  );
+};
 export default withRouter(Navbar);

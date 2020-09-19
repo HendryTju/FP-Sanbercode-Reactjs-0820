@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     height: "480px",
     display: "flex",
     flexDirection: "column",
+    backgroundColor: "lightgrey",
   },
   cardMedia: {
     margin: "15px",

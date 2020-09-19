@@ -19,16 +19,16 @@ const Home = (props) => {
       spacing={2}
       direction="column"
       justify="center"
-      alignItems="center"
+      alignItems="left"
     >
       <Grid item className="animate__animated animate__fadeInUp animate__slow">
-        <Typography variant="h2" align="center">
-          Odading Mang Oleh
+        <Typography variant="h2" align="left">
+          Tugas Final Project Sanbercode
         </Typography>
       </Grid>
       <Grid item className="animate__animated animate__fadeInUp animate__slow">
-        <Typography variant="h5" color="textSecondary" align="center">
-          Rasanya Anjing Banget!
+        <Typography variant="h5" color="textSecondary" align="left">
+          Special thanks to other participants
         </Typography>
       </Grid>
     </Grid>
